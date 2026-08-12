@@ -118,6 +118,12 @@ To ease reproducibility, we share our results over [TSB-UAD](http://chaos.cs.uch
 $ pip install vus
 ```
 
+This installs all core dependencies. TensorFlow-based models (`AE`, `CNN`, `LSTM`) are optional and require an extra install:
+
+```
+$ pip install vus[models]
+```
+
 ### Create Environment and Install Dependencies
 
 ```
@@ -132,6 +138,16 @@ $ git clone https://github.com/johnpaparrizos/VUS
 $ cd VUS/
 $ python setup.py install
 ```
+
+> **Note:** To include TensorFlow-based models when installing from source, use `pip install ".[models]"` instead.
+
+## Optional Dependencies
+
+| Extra | Command | Includes |
+|---|---|---|
+| `models` | `pip install vus[models]` | TensorFlow (`AE`, `CNN`, `LSTM` models) |
+
+Importing `vus.models.AE`, `vus.models.cnn`, or `vus.models.lstm` without the `[models]` extra will raise an `ImportError` with instructions.
 
 ## Experiments
 

@@ -1,8 +1,13 @@
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.callbacks import EarlyStopping
-from tensorflow.keras import layers
+try:
+    from tensorflow.keras.models import Sequential
+    from tensorflow.keras.callbacks import EarlyStopping
+    from tensorflow.keras import layers
+except ImportError:
+    raise ImportError(
+        "TensorFlow is required for vus.models. Install it with: pip install vus[models]"
+    )
 
 
 class AE_MLP2:

@@ -39,7 +39,11 @@ setup(
         'cython>=3.0.10',
         'scikit-learn>=1.3.2',
         'stumpy>=1.12.0',
-        'tensorflow>=2.13.0',
         'networkx>=3.1',
-        ]
+        ],
+    extras_require={
+        'models': [
+            'tensorflow>=2.13.0',
+        ],
+    },
 )

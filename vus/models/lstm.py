@@ -1,7 +1,12 @@
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
-from tensorflow.keras.layers import LSTM
-from tensorflow.keras.callbacks import EarlyStopping
+try:
+    from tensorflow.keras.models import Sequential
+    from tensorflow.keras.layers import Dense
+    from tensorflow.keras.layers import LSTM
+    from tensorflow.keras.callbacks import EarlyStopping
+except ImportError:
+    raise ImportError(
+        "TensorFlow is required for vus.models. Install it with: pip install vus[models]"
+    )
 
 
 import numpy as np
